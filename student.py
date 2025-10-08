@@ -16,7 +16,13 @@ class Student:
         query = "Delete*from student where id=%s"
         db.chay_lenh(query,(self.id,))
 
+    def capNhatSinhVien(self,db):
+        query = "Update student set id=%s, ten =%s,ngay=%s,thang=%s,nam=%s,lop=%s"
+        params = (self.id,self.ten,self.ngay,self.thang,self.nam,self.nam)
+        db.chay_lenh(query, params)
     
+    
+
 
     @staticmethod
     def timSinhVien(db, id):
