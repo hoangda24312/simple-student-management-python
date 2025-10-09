@@ -3,12 +3,12 @@ import database as Databse
 import mysql.connector
 
 def main():
-    try:
-        db = Databse()
-    except mysql.connector.Error as e:
-        print("Lỗi kết nối", e)
     flag = True
     while(flag == True):
+        try:
+            db = Databse()
+        except mysql.connector.Error as e:
+            print("Lỗi kết nối", e)
         print("1.Thêm sinh viên\t2.Xóa Sinh viên\3.Tìm sinh viên theo ID\t4.Hiển thị danh sách\t5.Cập nhật sinh viên\t0.Thoát")
         a = input()
         if a=="1":
